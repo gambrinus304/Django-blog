@@ -9,10 +9,17 @@
 
     <h2 class="mb-4">Posts:</h2>
 
-    {% for name in names %}
-        <p>
-            {{ name }}
-        </p>
+    {% for post in posts %}
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header bg-dark">
+                {{ post.date_pub}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.body|truncatewords:15 }}</p>
+                <a href="{{ post.get_absolute_url }}" class="btn btn-light">Read more</a>
+            </div>
+        </div>
     {% endfor %}
 
 {% endblock %}
