@@ -2,7 +2,7 @@ from django.db import models
 from django.shortcuts import reverse
 
 
-# Create your models here.
+
 class Post(models.Model):
     title = models.CharField(max_length=150, db_index=True)
     slug = models.SlugField(max_length=150, unique=True)
@@ -17,6 +17,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
 
 
 class Tag(models.Model):
